@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h5 class = "my-3 border-bottom pb-2">농장 목록</h5>
+{% if ras_list %}
+{% for ras in ras_list %}
+<h5>{{ ras.name }}</h5>
+{% endfor %}
+{% endif %}
+{% endblock %}

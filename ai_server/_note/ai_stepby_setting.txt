@@ -1,0 +1,25 @@
+1. 포트포워딩하기
+2. sudo apt-get -y install python3
+2.1 sudo apt-get -y install pip3
+    sudo apt install python3-pip
+sudo apt -y install nginx
+2.2 pip3 install django
+2.3 pip3 install pillow
+2.3 pip3 install tensorflow
+2.6 pip3 install gunicorn
+
+3. sudo apt-get -y install virtualbox-guest-utils
+4. mkdir share
+4. mkdir ai_server
+4.1 sudo mount -t vboxsf Downloads ./share
+4.2 cp -r ./share/ai_server/* ./ai_server
+4.3 cd ai_server
+4.4 sudo cp gunicorn.service /etc/systemd/system
+sudo cp -f default /etc/nginx/sites-available/default
+4.6 cd /etc/systemd/system
+sudo vi gunicorn.service 
+4.7 sudo systemctl start gunicorn.service
+4.8 sudo systemctl enable gunicorn.service
+sudo systemctl restart nginx
+
+*pypy3 -m gunicorn --bind 10.0.2.15:8000 config.wsgi:application

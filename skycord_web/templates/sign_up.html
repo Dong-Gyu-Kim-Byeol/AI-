@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko-kr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Skycord Team</title>
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="../static/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+
+<div class="container">
+    <form method="post" class="post-form my-3">
+{% csrf_token %}
+
+        <main class="form-signin">
+            <form>
+                <img class="mb-4" src="../static/image2vector.svg" alt="" width="300" height="300">
+                {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+    <form>
+        <div class="form-floating">
+            <label for="email">이메일</label>
+            <input type="email" class="form-control" name="email" id="email"
+                   value="{{ form.email.value|default_if_none:'' }}">
+        </div>
+
+        <h5> </h5>
+        <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" class="form-control" name="password" id="password"
+                   value="{{ '' }}">
+        </div>
+
+        <h5> </h5>
+
+        <div class="form-group">
+            <label for="phone">전화번호</label>
+            <input type="phone" class="form-control" name="phone" id="phone"
+                   value="{{ '' }}">
+        </div>
+
+
+        <a class="w-100 btn btn-lg btn-primary" href="/">로그인 페이지</a>
+
+        <h5> </h5>
+
+        <button type="submit" class="w-100 btn btn-lg btn-primary">회원가입</button>
+        <p class = "mt-5 mb-3 text-muted">&copy; Skycord Team</p>
+    </form>
+</div>
+</form>
+</main>
+</body>

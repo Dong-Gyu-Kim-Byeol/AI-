@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h5 class="my-3 border-bottom pb-2">장치 Setting 정보</h5>
+    <div>
+        "user_id" : "{{ user_id }}"<br>
+        "raspberry_id" : "{{ raspberry.id }}"<br>
+    </div>
+
+    <br><br>
+
+    <h5 class="my-3 border-bottom pb-2">농장 "{{ farm.name }}" 장치 정보</h5>
+    <form method="post" class="post-form my-3">
+        {% csrf_token %}
+            
+        <!-- 오류표시 Start -->
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+            {% for field in form %}
+                {% if field.errors %}
+                    <strong>{{ field.label }}</strong>
+                    {{ field.errors }}
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endif %}
+        <!-- 오류표시 End -->
+    
+        <div class="form-group">
+            <label for="name">이름
+                <input type="text" class="form-control" name="name" id="name"
+                   value="{{ raspberry.name }}">
+            </label>
+            <h5> </h5>
+        </div>
+            
+        <div>
+            <button type="submit" class="btn btn-primary">수정하기</button>
+            <a href="{% url 'skycord:Device_Delete' farm.id raspberry.id %}" class="btn btn-primary" style = "color: white;">장치 제거</a>
+            <h5> </h5>
+        </div>
+
+        <a href="{% url 'skycord:Device_Management' farm.id %}" class="btn btn-primary" style="color: white;">장치 목록</a>
+    </form>
+
+</div>
+
+{% endblock %}

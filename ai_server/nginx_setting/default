@@ -1,0 +1,16 @@
+upstream servers {
+        server unix:/tmp/gunicorn.sock;
+        server 10.0.2.22:8000;
+}
+
+
+server {
+        listen 80;
+
+        location = /favicon.ico { access_log off; log_not_found off; }
+
+        location / {
+                include proxy_params;
+                proxy_pass http://servers;
+        }
+}

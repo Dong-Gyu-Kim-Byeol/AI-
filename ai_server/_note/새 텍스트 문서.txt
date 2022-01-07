@@ -1,0 +1,25 @@
+EmailField
+CharField그 값이 이용 가능한 이메일 주소인지 확인 EmailValidator.
+
+https://seokhyun2.tistory.com/47?category=932160
+
+https://blog.winterjung.dev/2018/04/08/flask-concurrency-test
+
+https://daeguowl.tistory.com/m/156
+
+https://show-me-the-money.tistory.com/entry/Django-ORM-%EC%84%B1%EB%8A%A5-%ED%8A%9C%EB%8B%9D
+
+https://kamang-it.tistory.com/entry/WebServernginxnginx%EB%A1%9C-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1-%ED%95%98%EA%B8%B0
+
+ttps://blog.naver.com/PostView.nhn?blogId=sehyunfa&logNo=221692884510&from=search&redirect=Log&widgetTypeCall=true&directAccess=false
+
+https://docs.citusdata.com/en/v10.0/sharding/data_modeling.html
+
+
+
+
+
+
+
+
+

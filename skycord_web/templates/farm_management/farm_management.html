@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <h5 class="my-3 border-bottom pb-2">농장 관리</h5>
+
+    {% if farm_list %}
+    <table class="table">
+        <thead>
+            <tr class="thead-dark">
+                <th><h6>농장 이름</h6></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for farm in farm_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'skycord:Farm_Detail' farm.id %}" style="color: black;"><h6>{{ farm.name }}</h6></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <td colspan="3">농장이 없습니다.<br><br></td>
+    {% endif %}
+
+    <a href="{% url 'skycord:Farm_Create' %}" class="btn btn-primary" style="color: white;">농장 추가</a>
+
+</div>
+
+{% endblock %}

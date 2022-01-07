@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5 class = "my-3 border-bottom pb-2">장치 상황</h5>
+    <div>
+    {% if show_image_list %}
+            {% for show_image in show_image_list %}
+                    <h6 style="color:black" >상태 : {{show_image.predict_value}}
+                        <span style="color:red">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </span>
+                        <br>
+                        시간 : {{show_image.date}}
+                    </h6>
+                    <img src="{% url 'skycord:Split_Image_Show' show_image.id %}" 
+                            alt="Split Image View Error">
+                    <br>
+                    <br>
+                    <br>
+            {% endfor %}
+    {% else %}
+        최근 병충해 이미지가 없습니다.<br>
+        <br>
+    {% endif %}
+    </div>
+
+{% endblock %}

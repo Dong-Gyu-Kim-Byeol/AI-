@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5 class = "my-3 border-bottom pb-2">농장 상황 요약</h5>
+    <div>
+    {% if farm_health_list %}
+        
+            {% for farm_health in farm_health_list %}
+            {% if farm_health.is_health == False %}
+
+                    <a class="h6" style="color:black" href="{% url 'skycord:Device_State' farm_health.id %}">{{farm_health.name}}의 상황 : 위험
+                        <span style="color:red">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </span>
+                    </a>
+                    <br>
+                    <img src="{% url 'skycord:Split_Image_Show' farm_health.image_id %}" 
+                            alt="Split Image View Error">
+                    <br>
+                    <br>
+                    <br>
+            {% endif %}
+            {% endfor %}
+    {% else %}
+        장치가 없습니다.<br>
+        <h5> </h5>
+    
+    {% endif %}
+    </div>
+
+{% endblock %}

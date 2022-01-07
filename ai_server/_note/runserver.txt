@@ -1,0 +1,46 @@
+C:/Users/dvoy2/anaconda3/Scripts/activate
+conda activate django
+python manage.py runserver
+
+
+conda create -n django python=3.6
+pip install django
+
+pip install gunicorn
+
+conda deactivate
+
+E:
+cd E:\ai\tensorflow_django_server
+
+
+django-admin startproject config .
+django-admin startapp tomato_diseasetype
+
+10.0.2.4
+python manage.py runserver 220.149.148.240:8000
+python manage.py runserver
+
+
+sudo apt-get install virtualbox-guest-utils
+sudo mount -t vboxsf tensorflow_django_server ./share
+
+cd ./ai_server
+rm -r ./*
+cd ..
+cp -r ./share/* ./ai_server
+
+cd /etc/systemd/system
+sudo systemctl restart gunicorn.service
+sudo systemctl start gunicorn.service
+sudo systemctl status gunicorn.service
+sudo systemctl enable gunicorn.service
+
+which gunicorn
+
+
+nohup gunicorn -w 2 --threads 2 --bind 10.0.2.15:8000 config.wsgi:application &
+
+cd /home/ai_master/tensorflow_server
+
+

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5 class = "my-3 border-bottom pb-2">"{{farm_name}}"의 장치 상황</h5>
+    <div>
+    {% if device_health_list %}
+        
+            {% for device_health in device_health_list %}
+            {% if device_health.is_health == False %}
+                    <a class="h6" style="color:black" href="{% url 'skycord:Device_Image_List' device_health.id %}">{{device_health.name}}의 상황 : 위험
+                        <span style="color:red">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </span>
+                    </a>
+                    <h5> </h5>
+            {% else %}
+                    <a class="h6" style="color:black" href="{% url 'skycord:Device_Image_List' device_health.id %}">{{device_health.name}}의 상황 : 정상
+                        <span style="color:green">
+                            <i class = "fa fa-thumbs-up"></i>
+                        </span>
+                    </a>
+                    <h5> </h5>
+            {% endif %}
+            {% endfor %}
+    {% else %}
+        장치가 없습니다.<br>
+        <h5> </h5>
+    {% endif %}
+    </div>
+
+{% endblock %}

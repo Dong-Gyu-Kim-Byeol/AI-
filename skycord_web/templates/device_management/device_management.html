@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <h5 class="my-3 border-bottom pb-2">"{{ farm.name }}" 장치 관리</h5>
+
+    {% if raspberry_list %}
+    <table class="table">
+        <thead>
+            <tr class="thead-dark">
+                <th><h6>장치 이름</h6></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for raspberry in raspberry_list %}
+            <tr>
+                <td><a href="{% url 'skycord:Device_Detail' farm.id raspberry.id %}" style="color: black;"><h6>{{ raspberry.name }}</h6></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <td colspan="3">장치가 없습니다.<br><br></td>
+    {% endif %}
+
+    <a href="{% url 'skycord:Device_Create' farm.id %}" class="btn btn-primary" style="color: white;">장치 추가</a>
+    <a href="{% url 'skycord:Farm_Management' %}" class="btn btn-primary" style="color: white;">농장 목록</a>
+
+</div>
+
+{% endblock %}

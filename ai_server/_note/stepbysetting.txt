@@ -1,0 +1,23 @@
+1. 포트포워딩하기
+2. sudo apt-get -y install pypy3 
+2.1 sudo apt-get -y install python3-pip -y
+2.2 pypy3 -m pip -y install django -y
+2.3 pypy3 -m pip -y install pillow -y
+2.4 sudo apt-get -y install libpq-dev pypy3-dev -y
+2.5 pypy3 -m pip -y install psycopg2 -y
+2.6 pypy3 -m pip -y install gunicorn -y
+2.7 sudo apt -y install nginx
+3. sudo apt-get -y install virtualbox-guest-utils
+4. mkdir share | middle_server
+4.1 sudo mount -t vboxsf jump_to_jango share
+4.2 cp -r ./share/* ./middle_server
+4.3 cd midlle_server
+4.4 sudo cp gunicorn.service /etc/systemd/system
+4.5 sudo \cp -f default /etc/nginx/sites-available/default
+4.6 cd /etc/systemd/system
+4.7 sudo systemctl start gunicorn.service
+4.8 sudo systemctl enable gunicorn.service
+4.9 sudo systemctl restart nginx
+
+
+*pypy3 -m gunicorn --bind 10.0.2.15:8000 config.wsgi:application
