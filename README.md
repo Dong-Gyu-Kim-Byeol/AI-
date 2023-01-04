@@ -9,5 +9,6 @@ https://github.com/Dong-Gyu-Kim-Byeol/tomato-disease-detection-web-page/tree/mai
 9p : 시스템 구조 개요   
 9p ~ 21p : 인공지능 부분 설명   
 22p ~ 24p : 서버 구조 설명   
-25p ~ 28p : DB 및 분산 DB 설명   
+25p ~ 28p : DB 및 분산 DB 설명 (citus DB)   
+   
 [졸업_작품_보고서](./졸업_작품_보고서.pdf)   
