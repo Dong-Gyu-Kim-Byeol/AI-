@@ -4,7 +4,7 @@
 
 ai_model은 여기에 있습니다.   
 DenseNet, EfficientNet, SENet을 참고하여 만들었습니다.   
-https://github.com/Dong-Gyu-Kim-Byeol/tomato-disease-detection-web-page/tree/main/ai_server/tomato_disease_type/ai_model
+[https://github.com/Dong-Gyu-Kim-Byeol/tomato-disease-detection-web-page/tree/main/ai_server/tomato_disease_type/ai_model](https://github.com/Dong-Gyu-Kim-Byeol/tomato-disease-detection-web-page/blob/main/ai_server/tomato_disease_type/ai_model/SE_DenseEfficientNet.py)
 
 졸업 작품 보고서의 9p ~ 28p 부분이 제작한 소프트웨어의 설명입니다.   
 9p : 시스템 구조 개요   
